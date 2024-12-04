@@ -1,7 +1,7 @@
 public class MyString {
     public static void main(String[] args) {
         System.out.println("Testing lowercase:");
-        System.out.println("UnHappy : " + lowerCase("UnHappy"));
+        System.out.println(lowerCase("i love infi and intro").equals("i love infi and intro"));
         System.out.println("This costs 15 Sheksls : " + lowerCase("This costs 15 Sheksls"));
         System.out.println("TLV : " + lowerCase("TLV"));
         System.out.println("lowercase : " + lowerCase("lowercase"));
@@ -18,13 +18,30 @@ public class MyString {
 
     /** Returns the lowercase version of the given string. */
     public static String lowerCase(String str) {
-        // Replace the following statement with your code
-        return null;
+        return str.toLowerCase();
     }
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        // Replace the following statement with your code
-        return false;
+        if (str1.length() < str2.length()) {
+            return false;
+        }
+        int str1index = 0 , str2index = 0;
+        for (int i = 1; i <= str1.length(); i++) {
+        while (str2index < str2.length()) {
+            if (str2.charAt(str2index) == str1.charAt(str1index)) {
+                str2index++;
+                str1index = str2index;
+            }
+            else {
+                str2index = 0;
+                str1index = i;
+                break;
+            }
+            
+
+        }            
+        }
+        return str2index+1 == str2.length();
     }
 }
