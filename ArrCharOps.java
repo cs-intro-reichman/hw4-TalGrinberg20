@@ -22,6 +22,18 @@ public class ArrCharOps {
         System.out.println(compareTo("Zoo", "zoo"));
         System.out.println(hashCode(arr1));
         System.out.println(hashCode(arr2));
+        // char[] empty_arr = {};
+        // char[] arr1 = "I am the ".toCharArray();
+        // char[] arr2 = "eggman".toCharArray();
+        // char[] arr3 = "walrus".toCharArray();
+
+        // boolean test1 = ArrCharOps.equals(ArrCharOps.concat(arr1, arr2), "I am the eggman".toCharArray());
+        // boolean test2 = ArrCharOps.equals(ArrCharOps.concat(arr1, arr3), "I am the walrus".toCharArray());
+        // boolean test3 = ArrCharOps.equals(ArrCharOps.concat(empty_arr, arr3), arr3);
+        // System.out.println(test1);
+        // System.out.println(test2);
+        // System.out.println(test3);
+  
     }
 
     /** Prints the given array of characters, and moves the cursor to the next line.
@@ -44,7 +56,7 @@ public class ArrCharOps {
      */
     public static boolean equals(char[] arr1, char[] arr2) {
         for (int i = 0; i < arr1.length && arr1.length == arr2.length; i++) {
-            if (charAt(arr1, i) == charAt(arr2, i) ) {
+            if (charAt(arr1, i) != charAt(arr2, i) ) {
             return false;            
             }
         }
