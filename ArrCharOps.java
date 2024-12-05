@@ -22,11 +22,15 @@ public class ArrCharOps {
         // System.out.println(compareTo("Zoo", "zoo"));
         // System.out.println(hashCode(arr1));
         // System.out.println(hashCode(arr2));
-        int res = ArrCharOps.compareTo("abc", "");
-        System.out.println(ArrCharOps.compareTo("abc", "abc") == 0);
-        System.out.println(ArrCharOps.compareTo("abc", "aBc") == 1);
-        System.out.println(ArrCharOps.compareTo("abc", "abcd") == -1);
-        System.out.println(res != 0 && res != -1 && res != 1);
+
+
+        // int res = ArrCharOps.compareTo("abc", "");
+        // System.out.println(ArrCharOps.compareTo("abc", "abc") == 0);
+        // System.out.println(ArrCharOps.compareTo("abc", "aBc") == 1);
+        // System.out.println(ArrCharOps.compareTo("abc", "abcd") == -1);
+        // System.out.println(res != 0 && res != -1 && res != 1);
+        // char [] a = "baba ".toCharArray();
+        // subArray(a, 1, 5);
 
         // char[] arr1 = "Somebody stop me".toCharArray();
         // boolean test1 = ArrCharOps.equals(ArrCharOps.subArray(arr1, 0, 8), "Somebody".toCharArray());
@@ -132,7 +136,7 @@ public class ArrCharOps {
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
         char[] subArray = new char[(endIndex-beginIndex)];
-        for (int i = beginIndex, j=0; j < endIndex-beginIndex; i++, j++) {
+        for (int i = beginIndex, j=0; j < subArray.length; i++, j++) {
             subArray[j] = charAt(arr, i);
         }
         return subArray;

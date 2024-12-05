@@ -16,6 +16,7 @@ public class KeywordsDetector {
         // Some keywords that typically signal bullshit contents in business presentations 
         String[] keywords = {"synergy", "disrupt", "leverage", "Paradigm", "transform"};
         detectAndPrint(sentences, keywords);
+        // System.out.println(MyString.contains("Our product will transform the market","transform"));
     }
 
     // Iterates through all the sentences.
@@ -25,6 +26,7 @@ public class KeywordsDetector {
             for (int j = 0; j < keywords.length; j++) {
                 if (MyString.contains(sentences[i], keywords[j])) {
                     System.out.println(sentences[i]);
+                    break;
                 }
             }
         }
