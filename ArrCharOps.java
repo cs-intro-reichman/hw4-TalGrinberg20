@@ -22,13 +22,16 @@ public class ArrCharOps {
         // System.out.println(compareTo("Zoo", "zoo"));
         // System.out.println(hashCode(arr1));
         // System.out.println(hashCode(arr2));
+        System.out.println(ArrCharOps.compareTo("abc", "abc") == 0);
+        System.out.println(ArrCharOps.compareTo("abc", "aBc") == 1);
+        System.out.println(ArrCharOps.compareTo("abc", "abcd") == -1);
 
-        char[] arr1 = "Somebody stop me".toCharArray();
-        boolean test1 = ArrCharOps.equals(ArrCharOps.subArray(arr1, 0, 8), "Somebody".toCharArray());
-        boolean test2 = ArrCharOps.equals(ArrCharOps.subArray(arr1, 9, 16), "stop me".toCharArray());
-        System.out.println(test1);
-        System.out.println(test2);
-        System.out.println(subArray(arr1, 4, 10));
+        // char[] arr1 = "Somebody stop me".toCharArray();
+        // boolean test1 = ArrCharOps.equals(ArrCharOps.subArray(arr1, 0, 8), "Somebody".toCharArray());
+        // boolean test2 = ArrCharOps.equals(ArrCharOps.subArray(arr1, 9, 16), "stop me".toCharArray());
+        // System.out.println(test1);
+        // System.out.println(test2);
+        // System.out.println(subArray(arr1, 4, 10));
     
 
         // char[] empty_arr = {};
@@ -178,6 +181,9 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
+        if (str1.length() < str2.length()) {
+            return -1;
+        }
         for (int i = 0; i < str1.length(); i++) {
             if (str1.charAt(i) != str2.charAt(i)) {
                 if (str1.charAt(i)<str2.charAt(i)) {
