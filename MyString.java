@@ -27,35 +27,16 @@ public class MyString {
         if (str1.length() < str2.length()) {
             return false;
         }
-        int str1index = 0 , str2index = 0;
-        for (int i = 0; i < str1index; i++) {
-            while (str2index <= str2.length()) { 
-             if (str1.charAt(str1index) == str2.charAt(str2index)) {
-                 
-             } else {
-             }   
-            }
-        }
-
-
-
-
-
-
+        char[] str1Arr = str1.toCharArray();
+        char[] str2Arr = str2.toCharArray();
         for (int i = 0; i < str1.length()-str2.length(); i++) {
-        while (str2index < str2.length()) {
-            if (str2.charAt(str2index) == str1.charAt(str1index)) {
-                str2index++;
-                str1index++;
-            }
-            else {
-                str2index = 0;
-                str1index = i+1;
-            }
-            
-
-        }            
+          char [] subArray = ArrCharOps.subArray(str1Arr, i, str2.length());
+          if (ArrCharOps.equals(subArray, str2Arr)) {
+              return true;
+          }
+  
         }
-        return str2index+1 == str2.length();
+
+        return false;
     }
 }

@@ -2,26 +2,35 @@
  *  The library also features a string comparison method. */
 public class ArrCharOps {
     public static void main(String[] args) {
-        String str = "clearly";
-        char[] arr1 = {'c','l','e','a','r','l','y'};
-        char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
-        System.out.println(str);  // Prints the string
-        println(arr1);            // Prints an array of characters
-        System.out.println(charAt(arr1,2));      
-        System.out.println(indexOf(arr1,'l'));  
-        System.out.println(indexOf(arr1,'l',3)); 
-        System.out.println(lastIndexOf(arr1, 'l'));
-        System.out.println(concat(arr1, arr2));
-        System.out.println(subArray(arr2, 2, 9));
-        System.out.println(compareTo("abcd", "abcd"));
-        System.out.println(compareTo("abc", "abcd"));
-        System.out.println(compareTo("abw", "abcd"));
-        System.out.println(compareTo("Abcd", "a"));
-        System.out.println(compareTo("apple", "banana"));
-        System.out.println(compareTo("apple", "applepie"));
-        System.out.println(compareTo("Zoo", "zoo"));
-        System.out.println(hashCode(arr1));
-        System.out.println(hashCode(arr2));
+        // String str = "clearly";
+        // char[] arr1 = {'c','l','e','a','r','l','y'};
+        // char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
+        // System.out.println(str);  // Prints the string
+        // println(arr1);            // Prints an array of characters
+        // System.out.println(charAt(arr1,2));      
+        // System.out.println(indexOf(arr1,'l'));  
+        // System.out.println(indexOf(arr1,'l',3)); 
+        // System.out.println(lastIndexOf(arr1, 'l'));
+        // System.out.println(concat(arr1, arr2));
+        // System.out.println(subArray(arr2, 2, 9));
+        // System.out.println(compareTo("abcd", "abcd"));
+        // System.out.println(compareTo("abc", "abcd"));
+        // System.out.println(compareTo("abw", "abcd"));
+        // System.out.println(compareTo("Abcd", "a"));
+        // System.out.println(compareTo("apple", "banana"));
+        // System.out.println(compareTo("apple", "applepie"));
+        // System.out.println(compareTo("Zoo", "zoo"));
+        // System.out.println(hashCode(arr1));
+        // System.out.println(hashCode(arr2));
+
+        char[] arr1 = "Somebody stop me".toCharArray();
+        boolean test1 = ArrCharOps.equals(ArrCharOps.subArray(arr1, 0, 8), "Somebody".toCharArray());
+        boolean test2 = ArrCharOps.equals(ArrCharOps.subArray(arr1, 9, 16), "stop me".toCharArray());
+        System.out.println(test1);
+        System.out.println(test2);
+        System.out.println(subArray(arr1, 4, 10));
+    
+
         // char[] empty_arr = {};
         // char[] arr1 = "I am the ".toCharArray();
         // char[] arr2 = "eggman".toCharArray();
@@ -117,8 +126,8 @@ public class ArrCharOps {
      *  characters containing the characters "urge".
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
-        char[] subArray = new char[(endIndex-beginIndex)+1];
-        for (int i = beginIndex, j=0; i <= subArray.length; i++, j++) {
+        char[] subArray = new char[(endIndex-beginIndex)];
+        for (int i = beginIndex, j=0; j < endIndex-beginIndex; i++, j++) {
             subArray[j] = charAt(arr, i);
         }
         return subArray;
